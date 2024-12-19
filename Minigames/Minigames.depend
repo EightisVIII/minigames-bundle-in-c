@@ -1,0 +1,18 @@
+# depslib dependency file v1.0
+1734396946 source:c:\users\lenovo\documents\minigames bundle in c\minigames\main.c
+	<stdio.h>
+	<stdlib.h>
+	<math.h>
+	<time.h>
+	<stdbool.h>
+	<string.h>
+
+1734667123 source:c:\users\lenovo\documents\minigames bundle in c\minigames\minigames.c
+	<stdio.h>
+	<stdlib.h>
+	<math.h>
+	<time.h>
+	<stdbool.h>
+	<string.h>
+	<conio.h>
+
