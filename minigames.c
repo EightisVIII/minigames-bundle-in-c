@@ -1193,8 +1193,10 @@ void mathCraze(){
       for(int j = 0; j < 10; j++){
         printf("\t\t%d. ", j + 1);
         mathQs(q1[j]);
+        printf("\n\t\t   Current Score: %d", mathCrazePoints);
         printf("\n");
       }
+      printf("Final Score: %d", mathCrazePoints);
     } else if(areYouReady == 'n' || areYouReady == 'N'){
         printf("\n\t\t\t\t\t       Alright, maybe next time!\n");
         exit(0);
