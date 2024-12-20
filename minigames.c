@@ -50,6 +50,7 @@ int main(){
           printf("\n\n\t\t\t\t\t ------- SEE YOU LATER! -------");
           break;
         } else if(choice < 1 || choice > 4){
+          getchar();
           printf("\n\t\t\t\t\tIncorrect input! Please try again!\n");
           getch();
           continue;
@@ -131,20 +132,21 @@ void rps(){
        (rpsChoice == 's' && botChoice == 'r') ||
        (rpsChoice == 'r' && botChoice == 'p')){
         botColor();
-        printf("\n\n\t\t\t\t\t\t   Bot Wins\n");
+        printf("\n\n\t\t\t\t\t\t      Bot Wins");
         resetColor();
     } else if(rpsChoice == botChoice){
-        printf("\n\n\t\t\t\t\t\t     Draw\n");
+        printf("\n\n\t\t\t\t\t\t        Draw");
     } else if((rpsChoice == 'p' && botChoice == 'r') ||
               (rpsChoice == 's' && botChoice == 'p') ||
               (rpsChoice == 'r' && botChoice == 's')){
         pColor();
-        printf("\n\n\t\t\t\t\t\t    You Win\n");
+        printf("\n\n\t\t\t\t\t\t      You Win");
         resetColor();
         rpsPoints += 1;
     } else{
+        getchar();
         printf("\n\t\t\t\t\tIncorrect input! Restarting...\n");
-        return;
+        getch();
     }
 }
 
@@ -174,6 +176,7 @@ void quizBee(){
     scanf(" %c", &areYouReady);
 
     if(areYouReady == 'y' || areYouReady == 'Y'){
+      getchar();
       printf("\n\t\t\t\t\t\tQUESTIONNAIRE\n");
       for(int i = 0; i < 20; i++){
         printf("\t\t%d. ", i + 1);
@@ -188,7 +191,9 @@ void quizBee(){
       repeatGame = false;
       return;
     } else{
+      getchar();
       printf("\n\t\t\t\t\tIncorrect input! Restarting...\n");
+      getch();
     }
 }
 
@@ -1190,10 +1195,14 @@ void mathCraze(){
 
     printf("\n\t\t\t\t\t\tQUESTIONNAIRE\n");
     if(areYouReady == 'y' || areYouReady == 'Y'){
+      getchar();
       for(int j = 0; j < 10; j++){
         printf("\t\t%d. ", j + 1);
         mathQs(q1[j]);
-        printf("\n\t\t   Current Score: %d", mathCrazePoints);
+        pColor();
+        printf("\t\tCurrent Score: ");
+        resetColor();
+        printf("%d\n", mathCrazePoints);
         printf("\n");
       }
       printf("Final Score: %d", mathCrazePoints);
@@ -1204,7 +1213,9 @@ void mathCraze(){
         repeatGame = false;
         return;
     } else{
+        getchar();
         printf("\n\t\t\t\t\tIncorrect input! Restarting...\n");
+        getch();
     }
 }
 
@@ -1275,7 +1286,9 @@ void mathQs(int q1){
         printf("\n\t\tAnswer: ");
         scanf("%d", &pAnswer);
         if(pAnswer == ans){
-          mathCrazePoints++;
+            mathCrazePoints++;
+        } else{
+            getchar();
         }
         break;
     case 2:
@@ -1304,7 +1317,9 @@ void mathQs(int q1){
         printf("\n\t\tAnswer: ");
         scanf("%d", &pAnswer);
         if(pAnswer == ans){
-          mathCrazePoints++;
+            mathCrazePoints++;
+        } else{
+            getchar();
         }
         break;
     case 3:
@@ -1328,7 +1343,9 @@ void mathQs(int q1){
         printf("\n\t\tAnswer: ");
         scanf("%d", &pAnswer);
         if(pAnswer == ans){
-          mathCrazePoints++;
+            mathCrazePoints++;
+        } else{
+            getchar();
         }
         break;
     case 4:
@@ -1351,7 +1368,9 @@ void mathQs(int q1){
         printf("\n\t\tAnswer: ");
         scanf("%d", &pAnswer);
         if(pAnswer == ans){
-          mathCrazePoints++;
+            mathCrazePoints++;
+        } else{
+            getchar();
         }
         break;
     case 5:
@@ -1385,6 +1404,8 @@ void mathQs(int q1){
           scanf("%d", &pAnswer);
           if(pAnswer == fAns){
             mathCrazePoints++;
+          } else{
+                getchar();
           }
           break;
 
@@ -1403,6 +1424,8 @@ void mathQs(int q1){
             scanf("%d", &pAnswer);
             if(pAnswer == ans){
                 mathCrazePoints++;
+            } else{
+                getchar();
             }
         }
         // FIND Y
@@ -1416,6 +1439,8 @@ void mathQs(int q1){
             scanf("%d", &pAnswer);
             if(pAnswer == ans){
                 mathCrazePoints++;
+            } else{
+                getchar();
             }
         }
         break;
@@ -1433,6 +1458,8 @@ void mathQs(int q1){
             scanf("%d", &pAnswer);
             if(pAnswer == ans){
                 mathCrazePoints++;
+            } else{
+                getchar();
             }
         }
         // FIND Y
@@ -1446,6 +1473,8 @@ void mathQs(int q1){
             scanf("%d", &pAnswer);
             if(pAnswer == ans){
                 mathCrazePoints++;
+            } else{
+                getchar();
             }
         }
         break;
@@ -1470,8 +1499,12 @@ void mathQs(int q1){
           }
         }
 
+        printf("\n");
+
         if(pAns[0] == linearAns[0] && pAns[1] == linearAns[1]){
             mathCrazePoints++;
+        } else{
+            getchar();
         }
 
         break;
@@ -1506,18 +1539,24 @@ void mathQs(int q1){
             printf("\n\t\t   ");
         }
 
+        printf("\n");
+
         for(j = 0; j < ROW; j++){
           for(k = 0; k < COL; k++){
-            printf("\n\t\t   Input answer for row %d column %d: ", j + 1, k + 1);
+            printf("\t\tInput answer for row %d column %d: ", j + 1, k + 1);
             scanf("%d", &pA[j][k]);
             if(pA[j][k] == f[j][k]){
-                pAns == 0;
+                pAnswer= 0;
             }
           }
         }
 
-        if(pAns == 0){
+        printf("\n");
+
+        if(pAnswer == 0){
             mathCrazePoints++;
+        } else{
+            getchar();
         }
         break;
     case 10:
@@ -1549,18 +1588,24 @@ void mathQs(int q1){
             printf("\n\t\t   ");
         }
 
+        printf("\n");
+
         for(j = 0; j < ROW; j++){
           for(k = 0; k < COL; k++){
-            printf("\n\t\t   Input answer for row %d column %d: ", j + 1, k + 1);
+            printf("\t\tInput answer for row %d column %d: ", j + 1, k + 1);
             scanf("%d", &pA[j][k]);
             if(pA[j][k] == f[j][k]){
-                pAns == 0;
+                pAnswer = 0;
             }
           }
         }
 
-        if(pAns == 0){
+        printf("\n");
+
+        if(pAnswer == 0){
             mathCrazePoints++;
+        } else{
+            getchar();
         }
         break;
     case 11:
@@ -1600,18 +1645,24 @@ void mathQs(int q1){
             }
         }
 
+        printf("\n");
+
         for(j = 0; j < ROW; j++){
           for(k = 0; k < COL; k++){
-            printf("\n\t\t   Input answer for row %d column %d: ", j + 1, k + 1);
+            printf("\t\tInput answer for row %d column %d: ", j + 1, k + 1);
             scanf("%d", &pA[j][k]);
             if(pA[j][k] == f[j][k]){
-                pAns == 0;
+                pAnswer = 0;
             }
           }
         }
 
-        if(pAns == 0){
+        printf("\n");
+
+        if(pAnswer == 0){
             mathCrazePoints++;
+        } else{
+            getchar();
         }
         break;
     case 12:
@@ -1629,12 +1680,9 @@ void mathQs(int q1){
                 printf("{%d} ", d[j][k]);
             }
 
-            if(j == 0){
-                printf("  a*d - c*b  ");
-            }
-
             printf("\n\t\t   ");
         }
+        printf("\n\t\tFind the determinant.");
 
         /*
            A = [0][0]
@@ -1647,10 +1695,12 @@ void mathQs(int q1){
         prodCB = d[1][0] * d[0][1];
         determinant = prodAD - prodCB;
 
-        printf("\n\t\t   D = ");
+        printf("\n\t\tD = ");
         scanf("%d", &pAnswer);
         if(pAnswer == determinant){
             mathCrazePoints++;
+        } else{
+            getchar();
         }
         break;
 
@@ -1663,56 +1713,68 @@ void mathQs(int q1){
         scanf("%d", &pAnswer);
         if(pAnswer == ans){
             mathCrazePoints++;
+        } else{
+            getchar();
         }
         break;
     case 14:
         printf("%d - %d", q2, q3);
         ans = q2 - q3;
 
-        printf("\n\t\t   Answer: ");
+        printf("\n\t\tAnswer: ");
         scanf("%d", &pAnswer);
         if(pAnswer == ans){
             mathCrazePoints++;
+        } else{
+            getchar();
         }
         break;
     case 15:
         printf("%d * %d", q2, q3);
         ans = q2 * q3;
 
-        printf("\n\t\t   Answer: ");
+        printf("\n\t\tAnswer: ");
         scanf("%d", &pAnswer);
         if(pAnswer == ans){
             mathCrazePoints++;
+        } else{
+            getchar();
         }
         break;
     case 16:
-        printf("%.1f / %.1f", (float)q2,(float)q3);
+        printf("%.1f ÷ %.1f", (float)q2,(float)q3);
         ans = (float)q2 / (q3);
 
-        printf("\n\t\t   Answer: ");
+        printf("\n\t\tAnswer: ");
         scanf("%d", &pAnswer);
         if(pAnswer == ans){
             mathCrazePoints++;
+        } else{
+            getchar();
         }
         break;
     case 17:
         printf("%d^%d", q1, q4);
         ans = pow(q1, q4);
 
-        printf("\n\t\t   Answer: ");
+        printf("\n\t\tAnswer: ");
         scanf("%d", &pAnswer);
         if(pAnswer == ans){
             mathCrazePoints++;
+        } else{
+            getchar();
         }
         break;
     case 18:
         printf("√%d", q1);
         ans = sqrt(q1);
 
-        printf("\n\t\t   Answer: ");
+        printf("\n\t\tAnswer: ");
         scanf("%d", &pAnswer);
         if(pAnswer == ans){
             mathCrazePoints++;
+        } else{
+            getchar();
         }
         break;
 
@@ -1741,7 +1803,6 @@ void mathQs(int q1){
 
       if(q4 == 1){
         printf("\n\t\t   Find the missing side.\n");
-        printf("\t\t   ---VALUES---\n");
         if(sides == 0){
             // H missing
             printf("\t\t   o = %d\n", opp);
@@ -1751,6 +1812,8 @@ void mathQs(int q1){
             scanf("%d", &pAnswer);
             if(pAnswer == hypMis){
               mathCrazePoints++;
+            } else{
+              getchar();
             }
         } else if(sides == 1){
             // A missing
@@ -1761,6 +1824,8 @@ void mathQs(int q1){
             scanf("%d", &pAnswer);
             if(pAnswer == adjMis){
               mathCrazePoints++;
+            } else{
+              getchar();
             }
         } else{
             // O MISSING
@@ -1771,9 +1836,14 @@ void mathQs(int q1){
             scanf("%d", &pAnswer);
             if(pAnswer == oppMis){
               mathCrazePoints++;
+            } else{
+              getchar();
             }
         }
       } else{
+          printf("\n\t\t   h = %d\n", hyp);
+          printf("\t\t   o = %d\n", opp);
+          printf("\t\t   a = %d", adj);
           if(sides == 0){
             // SOH
             printf("\n\t\t   Find sine.\n");
@@ -1782,6 +1852,8 @@ void mathQs(int q1){
             scanf("%f", &playerA);
             if(fabs(playerA - SOH) < 0.01){
               mathCrazePoints++;
+            } else{
+              getchar();
             }
           } else if(sides == 1){
             printf("\n\t\t   Find cosine.\n");
@@ -1790,6 +1862,8 @@ void mathQs(int q1){
             scanf("%f", &playerA);
             if(fabs(playerA - CAH) < 0.01){
               mathCrazePoints++;
+            } else{
+              getchar();
             }
           } else{
             printf("\n\t\t   Find tangent.\n");
@@ -1798,12 +1872,10 @@ void mathQs(int q1){
             scanf("%f", &playerA);
             if(fabs(playerA - TOA) < 0.01){
               mathCrazePoints++;
+            } else{
+              getchar();
             }
           }
-
-          printf("\t\t   h = %d\n", hyp);
-          printf("\t\t   o = %d\n", opp);
-          printf("\t\t   a = %d", adj);
       }
       break;
    }

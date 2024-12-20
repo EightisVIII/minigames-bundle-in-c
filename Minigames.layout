@@ -1,15 +1,27 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
 <CodeBlocks_layout_file>
 	<FileVersion major="1" minor="0" />
-	<ActiveTarget name="Debug" />
+	<ActiveTarget name="Release" />
 	<File name="minigames.c" open="1" top="1" tabpos="1" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
 		<Cursor>
-			<Cursor1 position="142" topLine="0" />
+			<Cursor1 position="1266" topLine="50" />
 		</Cursor>
 		<Folding>
-			<Collapse line="85" />
-			<Collapse line="154" />
-			<Collapse line="194" />
+			<Collapse line="199" />
+			<Collapse line="1264" />
+			<Collapse line="1295" />
+			<Collapse line="1326" />
+			<Collapse line="1352" />
+			<Collapse line="1377" />
+			<Collapse line="1465" />
+			<Collapse line="1515" />
+			<Collapse line="1524" />
+			<Collapse line="1564" />
+			<Collapse line="1573" />
+			<Collapse line="1613" />
+			<Collapse line="1622" />
+			<Collapse line="1639" />
+			<Collapse line="1670" />
 		</Folding>
 	</File>
 </CodeBlocks_layout_file>
