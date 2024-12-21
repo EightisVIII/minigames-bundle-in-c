@@ -40,7 +40,7 @@ This project was created as part of a practical exercise to:
 
 2. Download the ZIP file by clicking the Download ZIP button.
 
-3. Etract the ZIP file in your File Explorer or any preferred file organizer app.
+3. Extract the ZIP file in your File Explorer or any preferred file organizer app.
 
 4. Open the extracted ZIP file and run the executable file to start playing!
 
